@@ -1,1 +1,3 @@
-# retro_bm25
+# Surface-Based Retrieval Reduces Perplexity of Retrieval-Augmented Language Models
+
+The code will be released here soon...
