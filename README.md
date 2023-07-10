@@ -2,8 +2,10 @@
 
 This repository contains the code for [Surface-Based Retrieval Reduces Perplexity of Retrieval-Augmented Language Models](https://aclanthology.org/2023.acl-short.45/). For setting up the environment, you can use the provided [Singularity](https://docs.sylabs.io/guides/3.7/user-guide/index.html) definition file, or translate it for Docker or Conda. 
 
+You can [contact me](mailto:ehsan.doostmohammadi@liu.se) in case something is unclear.
+
 ## Getting the Prerequisites in Place
-We need to have the model, data, and the neighbors ready in place as instructed in [RETRO](https://github.com/TobiasNorlund/retro). You need to run all the steps in that repository before moving forward. 
+First you need to follow the steps in [RETRO](https://github.com/TobiasNorlund/retro) repository. As soon as you have the model, data, chunks, and the Faiss index and neighbors in place you can move forward with the following steps here.
 
 Then you can run `make retriever_bm25/neighbours.npy` in the `data` directory. The last step can take a while.
 
