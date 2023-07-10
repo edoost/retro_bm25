@@ -1,0 +1,30 @@
+BootStrap: docker
+From: ubuntu:22.04
+
+%post
+    apt-get -y update
+    apt-get -y install python3 default-jdk gcc g++ python3-dev python3-pip curl build-essential
+
+    cd /usr/lib/jvm
+    ln -s default-java temurin
+
+    mkdir /usr/src/pylucene && cd /usr/src/pylucene
+    curl https://downloads.apache.org/lucene/pylucene/pylucene-9.1.0-src.tar.gz \
+    | tar -xz --strip-components=1
+
+    cd jcc && NO_SHARED=1 JCC_JDK=/usr/lib/jvm/temurin python3 setup.py install
+    cd /usr/src/pylucene && make all install JCC='python3 -m jcc' PYTHON=python3 NUM_FILES=16
+
+    cd /usr/src
+    rm -rf pylucene
+
+    pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+    pip3 install transformers \
+                 pytorch-lightning \
+                 einops \
+                 pytest \
+                 sentence-transformers \
+                 faiss-gpu \
+                 dvc[s3] \
+                 dask \
+                 notebook
