@@ -1,6 +1,6 @@
 # Surface-Based Retrieval Reduces Perplexity of Retrieval-Augmented Language Models
 
-This repository contains the code for [Surface-Based Retrieval Reduces Perplexity of Retrieval-Augmented Language Models](https://aclanthology.org/2023.acl-short.45/). For setting up the environment, you can use the provided [Singularity](https://docs.sylabs.io/guides/3.7/user-guide/index.html) definition file, or translate it for Docker or Conda. 
+This repository contains the code for [Surface-Based Retrieval Reduces Perplexity of Retrieval-Augmented Language Models](https://aclanthology.org/2023.acl-short.45/), where after showing the reliance of retrieval-augmented language models on surface-level similarities, we replace the BERT-style semantic retrieval with BM25 at test time to achieve further perplexity reductions. For setting up the environment, you can use the provided [Singularity](https://docs.sylabs.io/guides/3.7/user-guide/index.html) definition file, or translate it for Docker or Conda. 
 
 You can [contact me](mailto:ehsan.doostmohammadi@liu.se) in case something is unclear.
 
